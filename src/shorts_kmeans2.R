@@ -157,7 +157,7 @@ df |>
   ggplot(aes(x = month, y = n, color = cluster)) +
   geom_line(show.legend = F) +
   facet_wrap(~ cluster, scales="free_y") +
-  labs(title="K-Means 군집별 주별 댓글 수 추이", x="Month", y="Count")+
+  labs(title="K-Means 군집별 월별 댓글 수 추이", x="Month", y="Count")+
   theme_minimal()
 
 
