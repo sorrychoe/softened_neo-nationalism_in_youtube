@@ -66,7 +66,7 @@ df |>
 
 
 kl_divergence <- function(p, q) {
-  keep <- p > 0                      
+  keep <- p > 0                   
   if (any(q[keep] == 0)) return(Inf)
   sum(p[keep] * log(p[keep] / q[keep]))
 }

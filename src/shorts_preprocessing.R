@@ -37,10 +37,6 @@ df |>
 tmp <- rbind(rbind(cluster0, cluster1), rbind(cluster2, cluster3))
 text.df <- rbind(tmp, rbind(cluster4, cluster5))
 
-text.df |> 
-  mutate(kmeans = factor(kmeans)) |>
-  unnest_tokens(word, comment, morpho_mecab) -> text.df
-
 text.df |>
   mutate(cluster = case_when(kmeans == 0 ~ "감성적 놀이로서의 민족주의",
                              kmeans == 1 ~ "음식 민족주의",
