@@ -16,8 +16,7 @@ df <- read_csv("data/cluster_shorts.csv") |>
 group_by(channelName) |> 
 mutate(upload_min  = min(publishedAt),
        days_since_upload = as.numeric(difftime(publishedAt, upload_min, units = "days")),
-       comment = str_replace(comment, " ", ""),
-       length = nchar(comment)) |> 
+       length = nchar(str_remove_all(comment, " "))) |> 
 ungroup()
 
 # 군집 명명용: 군집 별 좋아요 상위 50개 댓글
